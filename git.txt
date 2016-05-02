@@ -1,0 +1,489 @@
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git
+$ git clone git@github.com:jagad/belajar-git.git
+Cloning into 'belajar-git'...
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git
+$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/AIK/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/AIK/.ssh/id_rsa.
+Your public key has been saved in /c/Users/AIK/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:SHzdLb67UYUvzd3m6zccg5PvtrvUAwfmETLbTnKnTnw AIK@DESKTOP-40MA849
+The key's randomart image is:
++---[RSA 2048]----+
+|           o .   |
+|     .   . .=... |
+|      o . .ooBo..|
+|     . o   .O.==o|
+|      . S   .B=EB|
+|            o*+*.|
+|            o.+o=|
+|             o.=+|
+|            o.+B*|
++----[SHA256]-----+
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git
+$ pbcopy < ~/.ssh/id_rsa.pub
+bash: pbcopy: command not found
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git
+$ git clone git@github.com:jagad/belajar-git.git
+Cloning into 'belajar-git'...
+Warning: Permanently added the RSA host key for IP address '192.30.252.122' to the list of known hosts.
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+Checking connectivity... done.
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git
+$ ls
+belajar-git/
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git
+$ cd belajar-git/
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ ls
+aik.txt  README.MD
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git add aik.txt
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git commit -am "Aik Hadir Baby"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <(null)>) not allowed
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git config --global user.email "aikkurnia@gmail.com"
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git config --global user.name "aikkurnia"
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git commit -am "Aik Hadir Baby"
+[master 2546fd6] Aik Hadir Baby
+ 1 file changed, 3 insertions(+)
+ create mode 100644 aik.txt
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git push origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+To git@github.com:jagad/belajar-git.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:jagad/belajar-git.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git pull origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:jagad/belajar-git
+ * branch            master     -> FETCH_HEAD
+   18cf725..ed42400  master     -> origin/master
+Merge made by the 'recursive' strategy.
+ yuri.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 yuri.txt
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ ls
+aik.txt  README.MD  yuri.txt
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git push origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 594 bytes | 0 bytes/s, done.
+Total 5 (delta 1), reused 0 (delta 0)
+To git@github.com:jagad/belajar-git.git
+   ed42400..d5d6714  master -> master
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git pull origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+remote: Counting objects: 37, done.
+remote: Compressing objects: 100% (23/23), done.
+remote: Total 37 (delta 15), reused 34 (delta 12), pack-reused 0
+Unpacking objects: 100% (37/37), done.
+From github.com:jagad/belajar-git
+ * branch            master     -> FETCH_HEAD
+   d5d6714..8bafeab  master     -> origin/master
+Updating d5d6714..8bafeab
+Fast-forward
+ afrizal.txt | 3 +++
+ febrina     | 5 +++++
+ husen.txt   | 3 +++
+ merry.txt   | 2 ++
+ razzaq.txt  | 2 ++
+ 5 files changed, 15 insertions(+)
+ create mode 100644 afrizal.txt
+ create mode 100644 febrina
+ create mode 100644 husen.txt
+ create mode 100644 merry.txt
+ create mode 100644 razzaq.txt
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ ls
+afrizal.txt  aik.txt  febrina  husen.txt  merry.txt  razzaq.txt  README.MD  yuri.txt
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git push origin master/README.MD
+error: src refspec master/README.MD does not match any.
+error: failed to push some refs to 'git@github.com:jagad/belajar-git.git'
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git add README.MD
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git push origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+Everything up-to-date
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ ls
+afrizal.txt  aik.txt  febrina  husen.txt  merry.txt  razzaq.txt  README.MD  yuri.txt
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git commit -am "aik ada"
+[master aabd856] aik ada
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git pull origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 5 (delta 2), reused 5 (delta 2), pack-reused 0
+Unpacking objects: 100% (5/5), done.
+From github.com:jagad/belajar-git
+ * branch            master     -> FETCH_HEAD
+   8bafeab..d970507  master     -> origin/master
+Auto-merging README.MD
+CONFLICT (content): Merge conflict in README.MD
+Automatic merge failed; fix conflicts and then commit the result.
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master|MERGING)
+$ git push origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+To git@github.com:jagad/belajar-git.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:jagad/belajar-git.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master|MERGING)
+$ git pull origin master
+error: Pull is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master|MERGING)
+$ git commit -am "aik ada"
+[master 45f8f4f] aik ada
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ ls
+afrizal.txt  aik.txt  febrina  husen.txt  merry.txt  razzaq.txt  README.MD  yuri.txt
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git pull origin master
+Warning: Permanently added the RSA host key for IP address '192.30.252.123' to the list of known hosts.
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 2), reused 6 (delta 2), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+From github.com:jagad/belajar-git
+ * branch            master     -> FETCH_HEAD
+   d970507..7401de4  master     -> origin/master
+Auto-merging README.MD
+CONFLICT (content): Merge conflict in README.MD
+Automatic merge failed; fix conflicts and then commit the result.
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master|MERGING)
+$ git push origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+To git@github.com:jagad/belajar-git.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:jagad/belajar-git.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master|MERGING)
+$ git add README.MD
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master|MERGING)
+$ git commit -am "aik ada"
+[master dc824d1] aik ada
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git pull origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+remote: Counting objects: 9, done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 9 (delta 4), reused 9 (delta 4), pack-reused 0
+Unpacking objects: 100% (9/9), done.
+From github.com:jagad/belajar-git
+ * branch            master     -> FETCH_HEAD
+   7401de4..c22b499  master     -> origin/master
+Auto-merging README.MD
+CONFLICT (content): Merge conflict in README.MD
+Automatic merge failed; fix conflicts and then commit the result.
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master|MERGING)
+$ git push origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+To git@github.com:jagad/belajar-git.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:jagad/belajar-git.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master|MERGING)
+$ git add README.MD
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master|MERGING)
+$ git commit -am "aik ada"
+[master b29f832] aik ada
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git pull origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+remote: Counting objects: 9, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 9 (delta 5), reused 9 (delta 5), pack-reused 0
+Unpacking objects: 100% (9/9), done.
+From github.com:jagad/belajar-git
+ * branch            master     -> FETCH_HEAD
+   c22b499..68a4a48  master     -> origin/master
+Auto-merging README.MD
+CONFLICT (content): Merge conflict in README.MD
+Automatic merge failed; fix conflicts and then commit the result.
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master|MERGING)
+$ git add README.MD
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master|MERGING)
+$ git commit -am "aik ada"
+[master 73a5c0c] aik ada
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git push origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+To git@github.com:jagad/belajar-git.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:jagad/belajar-git.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git pull origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 4), reused 4 (delta 2), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+From github.com:jagad/belajar-git
+ * branch            master     -> FETCH_HEAD
+   68a4a48..e09f330  master     -> origin/master
+Auto-merging README.MD
+CONFLICT (content): Merge conflict in README.MD
+Automatic merge failed; fix conflicts and then commit the result.
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master|MERGING)
+$ git add README.MD
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master|MERGING)
+$ git commit -am "aik ada"
+[master 9caf1f8] aik ada
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git push origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+Counting objects: 16, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (16/16), 1.57 KiB | 0 bytes/s, done.
+Total 16 (delta 7), reused 0 (delta 0)
+To git@github.com:jagad/belajar-git.git
+   e09f330..9caf1f8  master -> master
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ ls
+afrizal.txt  aik.txt  febrina  husen.txt  merry.txt  razzaq.txt  README.MD  yuri.txt
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git pull origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 6 (delta 4), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+From github.com:jagad/belajar-git
+ * branch            master     -> FETCH_HEAD
+   9caf1f8..3d3e1f0  master     -> origin/master
+Updating 9caf1f8..3d3e1f0
+Fast-forward
+ README.MD | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git pull origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+remote: Counting objects: 9, done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 9 (delta 6), reused 7 (delta 4), pack-reused 0
+Unpacking objects: 100% (9/9), done.
+From github.com:jagad/belajar-git
+ * branch            master     -> FETCH_HEAD
+   3d3e1f0..6b9e1a5  master     -> origin/master
+Updating 3d3e1f0..6b9e1a5
+Fast-forward
+ README.MD | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git pull origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 4), reused 4 (delta 2), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+From github.com:jagad/belajar-git
+ * branch            master     -> FETCH_HEAD
+   6b9e1a5..5bbc3c0  master     -> origin/master
+Updating 6b9e1a5..5bbc3c0
+Fast-forward
+ README.MD | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git pull origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+From github.com:jagad/belajar-git
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git pull origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+remote: Counting objects: 45, done.
+remote: Compressing objects: 100% (19/19), done.
+remote: Total 45 (delta 26), reused 43 (delta 24), pack-reused 0
+Unpacking objects: 100% (45/45), done.
+From github.com:jagad/belajar-git
+ * branch            master     -> FETCH_HEAD
+   5bbc3c0..96550d8  master     -> origin/master
+Updating 5bbc3c0..96550d8
+Fast-forward
+ README.MD              | 36 ++++++++++++++++++++++++++++++++++--
+ febrina => febrina.txt |  0
+ 2 files changed, 34 insertions(+), 2 deletions(-)
+ rename febrina => febrina.txt (100%)
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git commit -am "aik ada"
+[master ff1b913] aik ada
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git push origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 365 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To git@github.com:jagad/belajar-git.git
+   96550d8..ff1b913  master -> master
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git pull origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+remote: Counting objects: 9, done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 9 (delta 6), reused 7 (delta 4), pack-reused 0
+Unpacking objects: 100% (9/9), done.
+From github.com:jagad/belajar-git
+ * branch            master     -> FETCH_HEAD
+   ff1b913..36841da  master     -> origin/master
+Updating ff1b913..36841da
+Fast-forward
+ README.MD | 25 ++-----------------------
+ 1 file changed, 2 insertions(+), 23 deletions(-)
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git pull origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+remote: Counting objects: 9, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 9 (delta 6), reused 9 (delta 6), pack-reused 0
+Unpacking objects: 100% (9/9), done.
+From github.com:jagad/belajar-git
+ * branch            master     -> FETCH_HEAD
+   36841da..b742e4d  master     -> origin/master
+Updating 36841da..b742e4d
+Fast-forward
+ README.MD | 25 +++++++++++++++++++++++--
+ 1 file changed, 23 insertions(+), 2 deletions(-)
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ git pull origin master
+Enter passphrase for key '/c/Users/AIK/.ssh/id_rsa':
+remote: Counting objects: 33, done.
+remote: Compressing objects: 100% (14/14), done.
+remote: Total 33 (delta 22), reused 30 (delta 19), pack-reused 0
+Unpacking objects: 100% (33/33), done.
+From github.com:jagad/belajar-git
+ * branch            master     -> FETCH_HEAD
+   b742e4d..deacde9  master     -> origin/master
+Updating b742e4d..deacde9
+Fast-forward
+ README.MD | 74 ++++++++++++++++++++++++++++++++++++---------------------------
+ 1 file changed, 42 insertions(+), 32 deletions(-)
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$ ^C
+
+AIK@DESKTOP-40MA849 MINGW64 /d/doc/belajar git/belajar-git (master)
+$
